@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JP de Pretto — Cineasta e Videomaker · Salvador, BA</title>
+<meta name="description" content="JP de Pretto, cineasta e videomaker em Salvador, Bahia. Direção, fotografia premiada, montagem e produção. Trabalhos para Red Bull, Carbase, Fleezus e Instituto SISS.">
+<meta property="og:title" content="JP de Pretto · Cineasta e Videomaker">
+<meta property="og:description" content="Direção, fotografia premiada, montagem e produção. Salvador, Bahia.">
+<meta property="og:image" content="https://img.youtube.com/vi/HNFzUym3dNY/maxresdefault.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/logov_branca.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0C0C; --ink:#FBFDFE; --dim:#8b9494; --line:#1c2222; --acc:#1FB4B0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Nunito',sans-serif;font-weight:300;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,12,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:48px;width:auto}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{font-size:.82rem;font-weight:600;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+nav ul a:hover{color:var(--acc)}
+
+/* hero */
+header{position:relative;padding:150px 0 60px;overflow:hidden}
+.hero-mark{position:absolute;right:-40px;top:90px;width:min(46vw,480px);opacity:.06;pointer-events:none;user-select:none}
+.kicker{font-size:.78rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
+h1 .wordmark{width:min(86vw,620px);height:auto}
+.tagline{margin-top:22px;font-size:clamp(1rem,2.4vw,1.2rem);color:var(--dim);max-width:580px}
+.tagline b{color:var(--ink);font-weight:600}
+
+/* seções */
+section{padding:72px 0}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
+h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text-transform:uppercase}
+.sec-head small{font-size:.85rem;color:var(--dim)}
+
+/* player facade */
+.frame{position:relative;background:#000;border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.frame.wide{aspect-ratio:16/9}
+.frame.tall{aspect-ratio:9/16}
+.frame img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:opacity .3s,transform .5s}
+.frame:hover img{opacity:1;transform:scale(1.025)}
+.frame .play{position:absolute;inset:0;margin:auto;width:60px;height:60px;border-radius:50%;border:1px solid rgba(251,253,254,.35);background:rgba(10,12,12,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;pointer-events:none}
+.frame:hover .play{background:rgba(31,180,176,.92);border-color:var(--acc)}
+.frame .play svg{width:18px;height:18px;fill:var(--ink);margin-left:3px}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* destaques */
+#destaque .feature{margin-bottom:56px}
+#destaque .feature:last-child{margin-bottom:0}
+#destaque .frame{margin-bottom:16px}
+.d-meta{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline}
+.d-meta h3{font-weight:800;font-size:1.3rem}
+.d-meta p{color:var(--dim);font-size:.92rem}
+.d-award{margin-top:12px;border-left:3px solid var(--acc);padding:10px 16px;font-size:.92rem;color:var(--dim);background:rgba(31,180,176,.04)}
+.d-award b{color:var(--ink);font-weight:600}
+.d-award a{color:var(--acc);border-bottom:1px solid rgba(31,180,176,.35);transition:border-color .2s}
+.d-award a:hover{border-color:var(--acc)}
+
+/* grid trabalhos */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px}
+.card h3{font-weight:800;font-size:1.05rem;margin-top:12px}
+.card .meta{font-size:.84rem;color:var(--dim);margin-top:3px}
+.card .meta em{font-style:normal;color:var(--acc);font-weight:600}
+
+/* verticais */
+.vgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.vgrid .card h3{font-size:.82rem;margin-top:9px}
+.vgrid .card .meta{font-size:.73rem}
+
+/* produção & set */
+#producao{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.role{border:1px solid var(--line);padding:24px}
+.role h3{font-weight:800;font-size:.95rem;color:var(--acc);letter-spacing:.05em;text-transform:uppercase}
+.role p{margin-top:9px;font-size:.92rem;color:var(--dim)}
+.role p b{color:var(--ink);font-weight:600}
+
+/* origens */
+#origens .grid{grid-template-columns:1fr 1fr;max-width:760px}
+#origens .note{font-size:.94rem;color:var(--dim);max-width:580px;margin-bottom:30px}
+
+/* sobre */
+#sobre p{max-width:660px;font-size:1.08rem;color:var(--dim)}
+#sobre p b{color:var(--ink);font-weight:600}
+#sobre p + p{margin-top:16px}
+
+/* contato */
+#contato{padding-bottom:96px}
+.email{display:inline-block;font-weight:900;font-size:clamp(1.4rem,4.5vw,2.5rem);letter-spacing:-.01em;margin-top:8px;border-bottom:2px solid var(--acc);padding-bottom:4px;transition:color .2s}
+.email:hover{color:var(--acc)}
+.socials{display:flex;gap:26px;margin-top:34px}
+.socials a{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.socials a:hover{color:var(--acc);border-color:var(--acc)}
+
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:.8rem;color:var(--dim);display:flex}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+footer img{height:26px;opacity:.6}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:800px){
+  .grid{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:repeat(3,1fr)}
+  .roles{grid-template-columns:1fr}
+  #origens .grid{grid-template-columns:1fr}
+  header{padding:120px 0 40px}
+  section{padding:52px 0}
+  nav ul{gap:16px}
+  nav ul a{font-size:.72rem}
+  .hero-mark{opacity:.045;right:-80px}
+}
+@media(max-width:460px){
+  .vgrid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <ul>
+      <li><a href="#trabalhos">Trabalhos</a></li>
+      <li><a href="#producao">Produção</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="logo" href="#top"><img src="assets/logov_branca.png" alt="JP de Pretto"></a>
+  </div>
+</nav>
+
+<header id="top">
+  <img class="hero-mark" src="assets/logov_branca.png" alt="">
+  <div class="wrap">
+    <p class="kicker rv">Salvador · Bahia</p>
+    <h1 class="rv"><img class="wordmark" src="assets/wordmark_branca.png" alt="JP de Pretto"></h1>
+    <p class="tagline rv">Cineasta e videomaker. <b>Direção, fotografia, montagem e produção.</b> Do roteiro à ordem do dia: crio a imagem e seguro o set.</p>
+  </div>
+</header>
+
+<section id="destaque">
+  <div class="wrap">
+    <div class="feature rv">
+      <div class="frame wide" data-id="HNFzUym3dNY">
+        <img src="https://img.youtube.com/vi/HNFzUym3dNY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/HNFzUym3dNY/hqdefault.jpg'" alt="Toque Final, curta-metragem" loading="eager">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="d-meta">
+        <h3>Toque Final</h3>
+        <p>Curta de conclusão de curso · direção, roteiro, produção, fotografia e montagem</p>
+      </div>
+      <div class="d-award">Meu <b>primeiro filme autoral</b>, inspirado nas obras de Jorge Furtado: metalinguagem, memória, afeto e história baiana.</div>
+    </div>
+    <div class="feature rv" id="destinos">
+      <div class="frame wide" data-id="pqInfx-3ZVs">
+        <img src="https://img.youtube.com/vi/pqInfx-3ZVs/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/pqInfx-3ZVs/hqdefault.jpg'" alt="Destinos Cruzados, curta-metragem" loading="lazy">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="d-meta">
+        <h3>Destinos Cruzados</h3>
+        <p>Curta-metragem · direção de fotografia</p>
+      </div>
+      <div class="d-award">Premiado com <b>Melhor Fotografia e Melhor Direção</b> no festival internacional GallerySPT, em Leiria, Portugal (2026). <a href="https://www.jornalfolhadoestado.com/cultura/curta-metragem-feirense-destinos-cruzados-conquista-dois-premios-em-festival-internacional-em-portugal/" target="_blank" rel="noopener">Ler a matéria no Jornal Folha do Estado</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="trabalhos">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Trabalhos</h2><small>marcas, clipes e institucionais</small></div>
+    <div class="grid">
+      <article class="card rv">
+        <div class="frame wide" data-id="OFjpjaaD_bE">
+          <img src="https://img.youtube.com/vi/OFjpjaaD_bE/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/OFjpjaaD_bE/hqdefault.jpg'" alt="The Dandies" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>The Dandies</h3>
+        <p class="meta"><em>Trabalho autoral</em> · direção, fotografia e montagem</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="_y-rvnRZ_g0">
+          <img src="https://img.youtube.com/vi/_y-rvnRZ_g0/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/_y-rvnRZ_g0/hqdefault.jpg'" alt="BEZZI, Ghost the Ghost" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>BEZZI · Ghost the Ghost</h3>
+        <p class="meta"><em>Clipe musical</em> · 1º assistente de direção</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="VdpGvzVpEt0">
+          <img src="https://img.youtube.com/vi/VdpGvzVpEt0/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/VdpGvzVpEt0/hqdefault.jpg'" alt="Red Bull Ibiza Royale" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Red Bull · Ibiza Royale UCSAL</h3>
+        <p class="meta"><em>Red Bull</em> · criação, captação e montagem · 2025</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="kPtwiBUxWpA">
+          <img src="https://img.youtube.com/vi/kPtwiBUxWpA/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/kPtwiBUxWpA/hqdefault.jpg'" alt="Owlshit reel" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Owlshit · Reel</h3>
+        <p class="meta"><em>Parceria com marca</em> · criação, captação e montagem</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="5A7KGuuloKY">
+          <img src="https://img.youtube.com/vi/5A7KGuuloKY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/5A7KGuuloKY/hqdefault.jpg'" alt="Carbase Seeker Hat" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Carbase · Seeker Hat</h3>
+        <p class="meta"><em>Parceria com marca</em> · criação, captação e montagem</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="9a1aEBdFT2c">
+          <img src="https://img.youtube.com/vi/9a1aEBdFT2c/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/9a1aEBdFT2c/hqdefault.jpg'" alt="Fleezus, All of the Time" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Fleezus · All of the Time</h3>
+        <p class="meta"><em>Fleecy, coleção Fleezus</em> · criação, captação e montagem</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="fhTPb1yqPZ0">
+          <img src="https://img.youtube.com/vi/fhTPb1yqPZ0/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/fhTPb1yqPZ0/hqdefault.jpg'" alt="Pintadas Social Mulher" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Instituto SISS · Pintadas Social Mulher</h3>
+        <p class="meta"><em>Institucional</em> · cobertura de evento · 2026</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="verticais">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Vertical</h2><small>conteúdo pra rede, o formato que roda</small></div>
+    <div class="vgrid">
+      <article class="card rv">
+        <div class="frame tall" data-id="S7HQiPqUC5Q">
+          <img src="https://img.youtube.com/vi/S7HQiPqUC5Q/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/S7HQiPqUC5Q/hqdefault.jpg'" alt="Red Bull Paranauê 2024" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Red Bull Paranauê</h3>
+        <p class="meta">demo reel · 2024</p>
+      </article>
+      <article class="card rv">
+        <div class="frame tall" data-id="FqjfSWHaB-Y">
+          <img src="https://img.youtube.com/vi/FqjfSWHaB-Y/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/FqjfSWHaB-Y/hqdefault.jpg'" alt="Red Bull, Arthur Fiu" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Red Bull · Arthur Fiu</h3>
+        <p class="meta">campeão mundial de capoeira</p>
+      </article>
+      <article class="card rv">
+        <div class="frame tall" data-id="UAx8u5xasno">
+          <img src="https://img.youtube.com/vi/UAx8u5xasno/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/UAx8u5xasno/hqdefault.jpg'" alt="Carbase, Is It a Crime" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Carbase</h3>
+        <p class="meta">Is It a Crime?</p>
+      </article>
+      <article class="card rv">
+        <div class="frame tall" data-id="W9BEShQI_HA">
+          <img src="https://img.youtube.com/vi/W9BEShQI_HA/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/W9BEShQI_HA/hqdefault.jpg'" alt="Carbase, Jerk It Out" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Carbase</h3>
+        <p class="meta">Jerk It Out</p>
+      </article>
+      <article class="card rv">
+        <div class="frame tall" data-id="__2RcYWzsKI">
+          <img src="https://img.youtube.com/vi/__2RcYWzsKI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/__2RcYWzsKI/hqdefault.jpg'" alt="Instituto SISS institucional" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Instituto SISS</h3>
+        <p class="meta">institucional</p>
+      </article>
+      <article class="card rv">
+        <div class="frame tall" data-id="a5yOHHt-Huo">
+          <img src="https://img.youtube.com/vi/a5yOHHt-Huo/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/a5yOHHt-Huo/hqdefault.jpg'" alt="Instituto SISS institucional 2" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>Instituto SISS</h3>
+        <p class="meta">institucional</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="producao">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Produção &amp; Set</h2><small>o filme também se faz fora do enquadramento</small></div>
+    <div class="roles">
+      <div class="role rv">
+        <h3>Assistência de Direção</h3>
+        <p><b>1º assistente de direção</b> no clipe Ghost the Ghost (BEZZI): ordem do dia, decupagem técnica por departamento e cronograma de set. Próximo clipe já em produção.</p>
+      </div>
+      <div class="role rv">
+        <h3>Direção de Fotografia</h3>
+        <p>Fotografia <b>premiada internacionalmente</b> (Destinos Cruzados · GallerySPT, Portugal). Luz, lente e movimento a serviço da narrativa.</p>
+      </div>
+      <div class="role rv">
+        <h3>Produção Executiva</h3>
+        <p>Produtor com <b>CNPJ ativo (MEI)</b>: orçamento, contrato, cronograma e relação com cliente, do briefing à entrega.</p>
+      </div>
+      <div class="role rv">
+        <h3>Criação &amp; Desenvolvimento</h3>
+        <p>Websérie autobiográfica <b>Manual de Como Se Desapaixonar</b> em desenvolvimento: argumento, estrutura e bíblia do episódio piloto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="origens">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Onde começou</h2></div>
+    <p class="note rv">Dois registros de 2022, primeiro ano de faculdade: sem técnica, com fome. Deixo aqui de propósito: a distância entre esses vídeos e os lá de cima é o que eu entrego de evolução por ano.</p>
+    <div class="grid">
+      <article class="card rv">
+        <div class="frame wide" data-id="38unnjVuOn4">
+          <img src="https://img.youtube.com/vi/38unnjVuOn4/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/38unnjVuOn4/hqdefault.jpg'" alt="O primeiro de muitos" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>O Primeiro de Muitos</h3>
+        <p class="meta">apresentação pra turma · 2022</p>
+      </article>
+      <article class="card rv">
+        <div class="frame wide" data-id="MuvintJjrEI">
+          <img src="https://img.youtube.com/vi/MuvintJjrEI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/MuvintJjrEI/hqdefault.jpg'" alt="A Cartomante" loading="lazy">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <h3>A Cartomante</h3>
+        <p class="meta">curta acadêmico · início da UniJorge</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Sobre</h2></div>
+    <p class="rv">Sou <b>JP de Pretto</b>, cineasta e videomaker de Salvador, Bahia, formando em Cinema pela UniJorge (2026). Faço <b>cinema de cabo a rabo</b>: a imagem (direção, fotografia, montagem) e a máquina que faz o filme acontecer (assistência de direção, ordem do dia, orçamento, produção executiva).</p>
+    <p class="rv">Já criei e entreguei vídeo para <b>Red Bull, Carbase, Fleezus e Instituto SISS</b>, e sigo desenvolvendo trabalho autoral entre curtas e websérie. O que me move é simples: <b>contar histórias com cara e alma.</b></p>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Contato</h2></div>
+    <p class="rv" style="color:var(--dim)">Vamos conversar.</p>
+    <a class="email rv" href="mailto:jpapretto@gmail.com">jpapretto@gmail.com</a>
+    <div class="socials rv">
+      <a href="https://www.instagram.com/jp_de_pretto/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.behance.net/joopaulod3" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.youtube.com/@deprettojp" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 JP de Pretto · Salvador, BA</span>
+    <img src="assets/logov_branca.png" alt="">
+  </div>
+</footer>
+
+<script>
+// facade: só carrega o iframe do YouTube no clique
+document.querySelectorAll('.frame').forEach(f=>{
+  f.addEventListener('click',()=>{
+    if(f.querySelector('iframe'))return;
+    const el=document.createElement('iframe');
+    el.src='https://www.youtube.com/embed/'+f.dataset.id+'?autoplay=1&rel=0';
+    el.allow='autoplay; encrypted-media; picture-in-picture';
+    el.allowFullscreen=true;
+    f.appendChild(el);
+  });
+});
+// reveal no scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
