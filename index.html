@@ -34,7 +34,11 @@ nav ul a:hover{color:var(--acc)}
 
 /* hero */
 header{position:relative;padding:150px 0 44px;overflow:hidden}
-.hero-mark{position:absolute;right:2vw;top:96px;width:min(34vw,400px);height:auto;opacity:.07;pointer-events:none;user-select:none}
+.hero-mark{display:none;position:absolute;right:2vw;top:96px;width:min(34vw,400px);height:auto;opacity:.07;pointer-events:none;user-select:none}
+/* desktop: triângulo partido ao meio, fixo no fundo, cada metade numa borda */
+.bg-tri{position:fixed;top:0;height:100vh;width:auto;opacity:.06;z-index:-1;pointer-events:none;user-select:none}
+.bg-tri.l{left:0}
+.bg-tri.r{right:0}
 .kicker{font-size:.78rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
 h1 .wordmark{width:min(86vw,620px);height:auto}
 .tagline{margin-top:22px;font-size:clamp(1rem,2.4vw,1.2rem);color:var(--dim);max-width:580px}
@@ -123,7 +127,8 @@ footer img{height:26px;opacity:.6}
   section{padding:52px 0}
   nav ul{gap:16px}
   nav ul a{font-size:.72rem}
-  .hero-mark{opacity:.05;right:-8vw;width:52vw}
+  .hero-mark{display:block;opacity:.05;right:-8vw;width:52vw}
+  .bg-tri{display:none}
 }
 @media(max-width:460px){
   .vgrid{grid-template-columns:repeat(2,1fr)}
@@ -131,6 +136,9 @@ footer img{height:26px;opacity:.6}
 </style>
 </head>
 <body>
+
+<img class="bg-tri l" src="assets/tri_metade_dir.png" alt="">
+<img class="bg-tri r" src="assets/tri_metade_esq.png" alt="">
 
 <nav>
   <div class="wrap">
