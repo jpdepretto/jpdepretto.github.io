@@ -237,6 +237,23 @@ h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text
 #sobre p + p{margin-top:16px}
 
 /* contato */
+#contrate{padding-bottom:40px}
+.hire-lead{max-width:60ch;color:var(--dim);margin-top:-14px}
+.servicos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
+.srv{background:var(--bg);padding:22px}
+.srv h3{font-weight:800;font-size:1.02rem;margin-bottom:6px}
+.srv p{font-size:.9rem;color:var(--dim);line-height:1.5}
+.passos{list-style:none;counter-reset:p;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
+.passos li{counter-increment:p;border-top:2px solid var(--acc);padding-top:12px;font-size:.92rem;color:var(--dim);line-height:1.5}
+.passos li::before{content:counter(p);font-weight:900;color:var(--acc);margin-right:8px}
+.passos b{color:var(--ink);font-weight:800}
+.passos span{display:block;margin-top:4px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.cta{display:inline-block;background:var(--acc);color:var(--bg);font-weight:900;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;padding:15px 24px;transition:filter .2s}
+.cta:hover{filter:brightness(1.1)}
+.cta.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.cta.alt:hover{border-color:var(--acc);color:var(--acc)}
+.cta:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 #contato{padding-bottom:96px}
 .email{display:inline-block;font-weight:900;font-size:clamp(1.4rem,4.5vw,2.5rem);letter-spacing:-.01em;margin-top:8px;border-bottom:2px solid var(--acc);padding-bottom:4px;transition:color .2s}
 .email:hover{color:var(--acc)}
@@ -256,6 +273,8 @@ footer img{height:26px;opacity:.6}
   .grid{grid-template-columns:1fr}
   .vgrid{grid-template-columns:repeat(3,1fr)}
   .roles{grid-template-columns:1fr}
+  .servicos{grid-template-columns:1fr 1fr}
+  .passos{grid-template-columns:1fr;gap:18px}
   .case{grid-template-columns:1fr;gap:24px}
   .case .frame{max-width:320px}
   #origens .grid{grid-template-columns:1fr}
@@ -286,6 +305,7 @@ footer img{height:26px;opacity:.6}
       <li><a href="#trabalhos" data-i18n="nav_works">Trabalhos</a></li>
       <li><a href="#producao" data-i18n="nav_prod">Produção</a></li>
       <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
+      <li><a href="#contrate" data-i18n="nav_hire">Contrate</a></li>
       <li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
     </ul>
     <div class="nav-right">
@@ -551,6 +571,30 @@ footer img{height:26px;opacity:.6}
   </div>
 </section>
 
+<section id="contrate">
+  <div class="wrap">
+    <div class="sec-head rv"><h2 data-i18n="h_hire">Contrate</h2><small data-i18n="s_hire">proposta por escrito, contrato e prazo claro</small></div>
+    <p class="hire-lead rv" data-i18n="hire_lead">Me conta o projeto. Eu respondo com uma proposta por escrito: o que entra, quanto custa e quando fica pronto.</p>
+    <div class="servicos rv">
+      <div class="srv"><h3 data-i18n="sv1t">Direção e filmes</h3><p data-i18n="sv1p">Curtas, filmes de marca e projetos autorais, do roteiro à cor.</p></div>
+      <div class="srv"><h3 data-i18n="sv2t">Vídeos para marcas</h3><p data-i18n="sv2p">Institucional, campanha e conteúdo de produto.</p></div>
+      <div class="srv"><h3 data-i18n="sv3t">Videoclipes</h3><p data-i18n="sv3p">Conceito, direção, fotografia e montagem.</p></div>
+      <div class="srv"><h3 data-i18n="sv4t">Shows e eventos</h3><p data-i18n="sv4p">Cobertura, aftermovie e fotos.</p></div>
+      <div class="srv"><h3 data-i18n="sv5t">Conteúdo recorrente</h3><p data-i18n="sv5p">Reels e podcast em vídeo, com calendário e identidade visual.</p></div>
+      <div class="srv"><h3 data-i18n="sv6t">Equipe de set</h3><p data-i18n="sv6p">Assistência de câmera e de direção, roteiro e produção.</p></div>
+    </div>
+    <ol class="passos rv">
+      <li><b data-i18n="ps1t">Conversa</b><span data-i18n="ps1p">Você me conta o projeto pelo WhatsApp ou pelo formulário.</span></li>
+      <li><b data-i18n="ps2t">Proposta</b><span data-i18n="ps2p">Você recebe por escrito, com valores e prazos.</span></li>
+      <li><b data-i18n="ps3t">Contrato e gravação</b><span data-i18n="ps3p">Com o contrato assinado e o sinal, a data fica reservada.</span></li>
+    </ol>
+    <div class="ctas rv">
+      <a class="cta" href="https://wa.me/5571999040899?text=Oi%2C%20JP!%20Vi%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-i18n="cta_wa">Pedir orçamento no WhatsApp</a>
+      <a class="cta alt" href="https://docs.google.com/forms/d/e/1FAIpQLSfBArXeLccntsG2tKMd16v30TQn9V56T7aB9FxuuMv4yJcE6A/viewform" target="_blank" rel="noopener" data-i18n="cta_form">Prefiro o formulário</a>
+    </div>
+  </div>
+</section>
+
 <section id="contato">
   <div class="wrap">
     <div class="sec-head rv"><h2 data-i18n="h_ct">Contato</h2></div>
@@ -631,6 +675,18 @@ en:{
   h_about:"About",
   ab1:"I'm <b>JP De Pretto</b>, a filmmaker and videomaker from Salvador, Bahia, finishing my Film degree at UniJorge (graduating in late 2026). I do <b>filmmaking from end to end</b>: the image (directing, cinematography, editing) and the machine that makes the film happen (assistant directing, call sheets, budgeting, executive production).",
   ab2:"On the commercial side, I've created and delivered video for <b>Red Bull, Carbase, Fleecy and Owlshit</b>, and I have experience <b>shooting for a political campaign</b>. I keep developing authorial work across short films and a web series. What drives me is simple: <b>telling stories with face and soul.</b>",
+  nav_hire:"Hire me",h_hire:"Hire me",s_hire:"written proposal, contract and clear deadlines",
+  hire_lead:"Tell me about the project. I reply with a written proposal: what's included, what it costs and when it's ready.",
+  sv1t:"Directing and films",sv1p:"Short films, brand films and personal projects, from script to color.",
+  sv2t:"Brand videos",sv2p:"Corporate, campaign and product content.",
+  sv3t:"Music videos",sv3p:"Concept, directing, cinematography and editing.",
+  sv4t:"Shows and events",sv4p:"Coverage, aftermovie and photos.",
+  sv5t:"Recurring content",sv5p:"Reels and video podcasts, with a calendar and visual identity.",
+  sv6t:"Set crew",sv6p:"Camera and directing assistance, writing and production.",
+  ps1t:"Conversation",ps1p:"Tell me about the project on WhatsApp or through the form.",
+  ps2t:"Proposal",ps2p:"You get it in writing, with prices and deadlines.",
+  ps3t:"Contract and shoot",ps3p:"Once the contract is signed and the deposit paid, the date is booked.",
+  cta_wa:"Get a quote on WhatsApp",cta_form:"I'd rather use the form",
   h_ct:"Contact",ct_lead:"Let's talk."
 },
 es:{
@@ -673,6 +729,18 @@ es:{
   h_about:"Sobre mí",
   ab1:"Soy <b>JP De Pretto</b>, cineasta y videomaker de Salvador, Bahía, terminando la carrera de Cine en UniJorge (graduación a fines de 2026). Hago <b>cine de cabo a rabo</b>: la imagen (dirección, fotografía, montaje) y la máquina que hace que la película suceda (asistencia de dirección, orden del día, presupuesto, producción ejecutiva).",
   ab2:"En publicidad ya creé y entregué video para <b>Red Bull, Carbase, Fleecy y Owlshit</b>, y tengo experiencia en <b>rodaje para campaña política</b>. Sigo desarrollando trabajo de autor entre cortos y una webserie. Lo que me mueve es simple: <b>contar historias con cara y alma.</b>",
+  nav_hire:"Contrátame",h_hire:"Contrátame",s_hire:"propuesta por escrito, contrato y plazos claros",
+  hire_lead:"Cuéntame el proyecto. Te respondo con una propuesta por escrito: qué incluye, cuánto cuesta y cuándo está listo.",
+  sv1t:"Dirección y películas",sv1p:"Cortos, películas de marca y proyectos de autor, del guion al color.",
+  sv2t:"Videos para marcas",sv2p:"Institucional, campaña y contenido de producto.",
+  sv3t:"Videoclips",sv3p:"Concepto, dirección, fotografía y montaje.",
+  sv4t:"Shows y eventos",sv4p:"Cobertura, aftermovie y fotos.",
+  sv5t:"Contenido recurrente",sv5p:"Reels y podcast en video, con calendario e identidad visual.",
+  sv6t:"Equipo de set",sv6p:"Asistencia de cámara y de dirección, guion y producción.",
+  ps1t:"Conversación",ps1p:"Me cuentas el proyecto por WhatsApp o por el formulario.",
+  ps2t:"Propuesta",ps2p:"La recibes por escrito, con precios y plazos.",
+  ps3t:"Contrato y rodaje",ps3p:"Con el contrato firmado y la seña, la fecha queda reservada.",
+  cta_wa:"Pedir presupuesto por WhatsApp",cta_form:"Prefiero el formulario",
   h_ct:"Contacto",ct_lead:"Hablemos."
 }};
 const orig={};
