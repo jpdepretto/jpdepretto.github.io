@@ -308,6 +308,7 @@ footer img{height:26px;opacity:.6}
       <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
       <li><a href="#contrate" data-i18n="nav_hire">Contrate</a></li>
       <li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
+      <li><a id="cvnav" href="assets/cv/JP_De_Pretto_CV_PT.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
     <div class="nav-right">
       <div class="langs">
@@ -765,7 +766,7 @@ function setLang(l){
     el.innerHTML = l==='pt' ? orig[k] : (I18N[l][k]||orig[k]);
   });
   document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
-  const cv=document.getElementById('cvlink'); if(cv) cv.href='assets/cv/JP_De_Pretto_CV_'+({pt:'PT',en:'EN',es:'ES'}[l]||'PT')+'.pdf';
+  document.querySelectorAll('#cvlink,#cvnav').forEach(cv=>{cv.href='assets/cv/JP_De_Pretto_CV_'+({pt:'PT',en:'EN',es:'ES'}[l]||'PT')+'.pdf';});
   try{localStorage.setItem('lang',l)}catch(e){}
 }
 document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
