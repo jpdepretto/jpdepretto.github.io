@@ -121,10 +121,11 @@
 <link rel="icon" type="image/png" href="assets/logov_branca.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..900&family=Nunito:ital,wght@0,300;0,400;0,600;0,800;0,900;1,300&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0A0C0C; --ink:#FBFDFE; --dim:#8b9494; --line:#1c2222; --acc:#1FB4B0;
+  --display:'Unbounded',"Arial Black",Arial,sans-serif; /* títulos; Nunito no resto */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -141,6 +142,18 @@ nav ul{display:flex;gap:26px;list-style:none}
 nav ul a{font-size:.82rem;font-weight:600;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
 nav ul a:hover{color:var(--acc)}
 .nav-right{display:flex;align-items:center;gap:16px;margin-left:auto}
+/* menu sanduíche: só aparece no celular */
+.burger{display:none;background:none;border:0;padding:10px 6px;cursor:pointer;flex-direction:column;gap:5px}
+.burger span{display:block;width:24px;height:2px;background:var(--fg,#FBFDFE);border-radius:2px;transition:transform .25s,opacity .2s}
+nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .burger span:nth-child(2){opacity:0}
+nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:760px){
+  .burger{display:flex}
+  nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0!important;background:rgba(10,12,12,.97);border-bottom:1px solid var(--line);padding:8px 0 14px}
+  nav.open ul{display:flex}
+  nav ul a{display:block;padding:14px 22px;font-size:.9rem!important}
+}
 .langs{display:flex;gap:7px}
 .langs button{background:none;border:1px solid transparent;padding:3px;cursor:pointer;opacity:.45;border-radius:4px;display:flex;transition:opacity .2s,border-color .2s}
 .langs button:hover{opacity:.85}
@@ -162,8 +175,9 @@ h1 .wordmark{width:min(86vw,620px);height:auto}
 
 /* seções */
 section{padding:72px 0}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
-h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text-transform:uppercase}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:34px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.3rem,3.6vw,1.9rem);line-height:1.1;letter-spacing:-.02em;text-transform:uppercase}
+h3{font-family:var(--display);letter-spacing:-.01em;line-height:1.25}
 .sec-head small{font-size:.85rem;color:var(--dim)}
 
 /* player facade */
@@ -183,7 +197,7 @@ h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text
 #destaque .feature:last-child{margin-bottom:0}
 #destaque .frame{margin-bottom:16px}
 .d-meta{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline}
-.d-meta h3{font-weight:800;font-size:1.3rem}
+.d-meta h3{font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
 .d-meta p{color:var(--dim);font-size:.92rem}
 .d-award{margin-top:12px;border-left:3px solid var(--acc);padding:10px 16px;font-size:.92rem;color:var(--dim);background:rgba(31,180,176,.04)}
 .d-award b{color:var(--ink);font-weight:600}
@@ -195,7 +209,7 @@ h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text
 .case{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:38px;align-items:center}
 .case .frame{width:100%}
 .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);border:1px solid var(--acc);padding:4px 10px;margin-bottom:14px}
-.case-body h3{font-weight:800;font-size:1.3rem}
+.case-body h3{font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
 .case-body .meta{font-size:.92rem;color:var(--dim);margin-top:4px}
 .case-body .meta em{font-style:normal;color:var(--acc);font-weight:600}
 .case-note{margin-top:14px;border-left:3px solid var(--acc);padding:10px 16px;font-size:.92rem;color:var(--dim);background:rgba(31,180,176,.04)}
@@ -205,26 +219,26 @@ h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text
 
 /* grid trabalhos */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px}
-.card h3{font-weight:800;font-size:1.05rem;margin-top:12px}
+.card h3{font-weight:700;font-size:.96rem;margin-top:12px}
 .card .meta{font-size:.84rem;color:var(--dim);margin-top:3px}
 .card .meta em{font-style:normal;color:var(--acc);font-weight:600}
 
 /* verticais */
 .vgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.vgrid .card h3{font-size:.82rem;margin-top:9px}
+.vgrid .card h3{font-weight:600;font-size:.74rem;margin-top:9px}
 .vgrid .card .meta{font-size:.73rem}
 
 /* produção & set */
 #producao{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .roles{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .role{border:1px solid var(--line);padding:24px}
-.role h3{font-weight:800;font-size:.95rem;color:var(--acc);letter-spacing:.05em;text-transform:uppercase}
+.role h3{font-weight:700;font-size:.86rem;color:var(--acc);letter-spacing:.02em;text-transform:uppercase}
 .role p{margin-top:9px;font-size:.92rem;color:var(--dim)}
 .role p b{color:var(--ink);font-weight:600}
 .mais{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:24px;margin-top:40px}
 .mais figure{margin:0}
 .mais figcaption{margin-top:10px;font-size:.88rem;line-height:1.4}
-.mais figcaption b{display:block;font-weight:800}
+.mais figcaption b{display:block;font-family:var(--display);font-weight:700;font-size:.84rem;letter-spacing:-.01em;margin-bottom:2px}
 .mais figcaption span{color:var(--dim)}
 .role.full{grid-column:1/-1}
 
@@ -242,7 +256,7 @@ h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text
 .hire-lead{max-width:60ch;color:var(--dim);margin-top:-14px}
 .servicos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
 .srv{background:var(--bg);padding:22px}
-.srv h3{font-weight:800;font-size:1.02rem;margin-bottom:6px}
+.srv h3{font-weight:700;font-size:.94rem;margin-bottom:6px}
 .srv p{font-size:.9rem;color:var(--dim);line-height:1.5}
 .passos{list-style:none;counter-reset:p;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
 .passos li{counter-increment:p;border-top:2px solid var(--acc);padding-top:12px;font-size:.92rem;color:var(--dim);line-height:1.5}
@@ -258,7 +272,7 @@ h2{font-weight:900;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em;text
 #contato{padding-bottom:96px}
 .email{display:inline-block;font-weight:900;font-size:clamp(1.4rem,4.5vw,2.5rem);letter-spacing:-.01em;margin-top:8px;border-bottom:2px solid var(--acc);padding-bottom:4px;transition:color .2s}
 .email:hover{color:var(--acc)}
-.socials{display:flex;gap:26px;margin-top:34px}
+.socials{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:34px}
 .socials a{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .socials a:hover{color:var(--acc);border-color:var(--acc)}
 
@@ -300,9 +314,10 @@ footer img{height:26px;opacity:.6}
 <img class="bg-tri l" src="assets/tri_metade_dir.png" alt="">
 <img class="bg-tri r" src="assets/tri_metade_esq.png" alt="">
 
-<nav>
+<nav id="nav">
   <div class="wrap">
-    <ul>
+    <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+    <ul id="navlinks">
       <li><a href="#trabalhos" data-i18n="nav_works">Trabalhos</a></li>
       <li><a href="#producao" data-i18n="nav_prod">Produção</a></li>
       <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
@@ -626,6 +641,14 @@ footer img{height:26px;opacity:.6}
   </div>
 </footer>
 
+<script>
+(function(){
+  var nav=document.getElementById('nav'),b=nav.querySelector('.burger');
+  function set(o){nav.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));}
+  b.addEventListener('click',function(){set(!nav.classList.contains('open'))});
+  nav.querySelectorAll('#navlinks a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+})();
+</script>
 <script>
 // facade: só carrega o iframe do YouTube no clique
 document.querySelectorAll('.frame').forEach(f=>{
